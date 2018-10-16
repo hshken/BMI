@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
         editWeight= findViewById(R.id.ed_Weight);
         editHeight = findViewById(R.id.ed_Height);
         //取得方塊內資料，轉成屬性
+        Button help = findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log
+
+            }
+        });
     }
     public void BMI(View view){
         Log.d("MainActivity","BMI");
