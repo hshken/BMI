@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViews();
+    }
+
+    private void findViews() {
         editWeight= findViewById(R.id.ed_Weight);
         editHeight = findViewById(R.id.ed_Height);
         //取得方塊內資料，轉成屬性
@@ -24,11 +28,18 @@ public class MainActivity extends AppCompatActivity {
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log
+                Log.d("MainActivity","OnClick:hlep");
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("BMI")
+                        .setMessage("Body mass index\n" + "Medical diagnostics\n" + "BMI chart.svg\n" + "A graph of body mass index as a function of body mass and body height. The dashed lines represent subdivisions within a major class.\n" + "MeSH\tD015992\n" + "MedlinePlus\t007196\n" + "LOINC\t39156-5\n" + "The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual. ")
+                        .setPositiveButton("OK" ,null )
+                        .show();
+
 
             }
         });
     }
+
     public void BMI(View view){
         Log.d("MainActivity","BMI");
         //取得輸入方塊
