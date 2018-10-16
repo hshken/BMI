@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity","OnClick:hlep");
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("BMI")
-                        .setMessage("Body mass index\n" + "Medical diagnostics\n" + "BMI chart.svg\n" + "A graph of body mass index as a function of body mass and body height. The dashed lines represent subdivisions within a major class.\n" + "MeSH\tD015992\n" + "MedlinePlus\t007196\n" + "LOINC\t39156-5\n" + "The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual. ")
+                        .setMessage("The body mass index (BMI) or Quetelet index is a value derived from the mass (weight) and height of an individual. ")
                         .setPositiveButton("OK" ,null )
                         .show();
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void BMI(View view){
-        Log.d("MainActivity","BMI");
+        Log.d("MainActivity",getString(R.string.BMI));
         //取得輸入方塊
         String w = editWeight.getText().toString();
         String h = editHeight.getText().toString();
@@ -50,15 +50,15 @@ public class MainActivity extends AppCompatActivity {
         float height =Float.parseFloat(h);
         float BMI = weight/(height*height);
         Log.d("MainActivity",BMI+" ");
-        Toast.makeText(this, "Your BMI is " + BMI, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, getString(R.string.yourBMIis) + BMI, Toast.LENGTH_LONG).show();
        //創出小的對話框
         new AlertDialog.Builder(this)
                 //創出大的對話框
-                .setMessage("Your BMI is " + BMI)
+                .setMessage(getString(R.string.yourBMI) + BMI)
                 //對話框內的內容
-                .setTitle("BMI")
+                .setTitle(R.string.BMI)
                 //對話框的標題
-                .setPositiveButton("OK", new DialogInterface.OnClickListener()
+                .setPositiveButton(R.string.OK, new DialogInterface.OnClickListener()
                 //  對話框的按鈕
                 {
                     @Override
