@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ed_Height" />
 
     <Button
-        android:id="@+id/hl"
+        android:id="@+id/help"
         android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginTop="8dp"
