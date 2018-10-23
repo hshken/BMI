@@ -1,6 +1,7 @@
 package fju.com.bmi;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
         float height =Float.parseFloat(h);
         float BMI = weight/(height*height);
         Log.d("MainActivity",BMI+" ");
-        Toast.makeText(this, getString(R.string.yourBMIis) + BMI, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this,ResultActivity.class);
+        intent.putExtra("BMI", BMI);
+        startActivity(intent);
+        /*Toast.makeText(this, getString(R.string.yourBMIis) + BMI, Toast.LENGTH_LONG).show();
        //創出小的對話框
         new AlertDialog.Builder(this)
                 //創出大的對話框
@@ -68,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         //執行完後，刪掉原本輸入的
                     }
                 })
-                .show();
+                .show();*/
     }
 }
+
